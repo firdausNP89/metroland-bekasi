@@ -1,0 +1,4 @@
+{
+    "500": "Login gagal, Email dan password tidak sesuai",
+    "551": "System error, key yang digunakan tidak dikenali"
+}
