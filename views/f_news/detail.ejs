@@ -1,0 +1,47 @@
+<%- include('../layouts/f_header') %>
+    <%- include('../layouts/f_menu_general') %>
+
+        <!--CONTENT-->
+        <div class="hero-image">
+            <img src="/metroland/assets/img/Aglonema.jpg" class="img-fluid">
+        </div>
+        <!-- isi berita -->
+        <div class="container-fluid">
+            <div class="container">
+                <div class="new-title text-center my-5">
+                    <h1>
+                        <%= news.title%>
+                    </h1>
+                    <p>
+                        <%= moment(news.updated_at).format( 'DD-MMMM-YYYY HH:mm' ) %>
+                    </p>
+                </div>
+                <div class="new-content">
+                    <div class="col-12 col-md-12">
+                        <%- news.description %>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- berita selanjutnya -->
+        <div class="container-fluid bg-opacity-100 p-0 next-news">
+            <img src="/metroland/assets/img/berita2.jpg" class="img-fluid ">
+            <div class="title">
+                <a href="">Berita Selanjutnya</a>
+                <img src="/metroland/assets/img/arrow-right.svg">
+                <br><br>
+                <a href="">
+                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, voluptates!</h3>
+                </a>
+            </div>
+        </div>
+
+        <a href="https://wa.me/6281210012200?text=Hi%20Metroland" class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
+
+        <%- include('../layouts/f_footer') %>
+            <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+            <script src="/metroland/assets/js/front_end/news/index.js"></script>
+            <%- include('../layouts/f_end') %>

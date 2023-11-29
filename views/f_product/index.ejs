@@ -1,0 +1,231 @@
+<%- include('../layouts/f_header') %>
+    <%- include('../layouts/f_menu_general') %>
+
+        <!--CONTENT-->
+        <div class="hero-video">
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="/metroland/assets/video/sample-video.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="container-fluid" id="cluster">
+            <div class="container my-2 py-5">
+                <div class="cluster-title text-center img-fluid">
+                    <img src="/metroland/assets/img/<%= data.image %>">
+                    <p>
+                        <%= JSDOM.fragment(data.content).textContent%>
+                    </p>
+                </div>
+                <div>
+                    <ul class="nav nav-pills mt-5 justify-content-between nav-justified" id="pills-tab" role="tablist">
+                        <%let no=1; data.clusters.forEach(cluster=> {%>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link <%- no == 1 ?" active":""%>" id="pills-<%= cluster.id %>-tab"
+                                        data-bs-toggle="pill"
+                                        data-bs-target="#cluster_<%= cluster.id %>" type="button" role="tab"
+                                            aria-controls="pills-<%= cluster.name %>"
+                                                aria-selected="true"><%= cluster.name.toUpperCase() %></button>
+                            </li>
+                            <%no++});%>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <%let no_=1; data.clusters.forEach(cluster=> {%>
+                            <div class="tab-pane fade show <%- no_ == 1?" active":""%>" id="cluster_<%= cluster.id %>"
+                                    role="tabpanel"
+                                    aria-labelledby="pills-<%= cluster.id %>-tab" tabindex="0">
+                                        <div>
+                                            <div class="card mx-auto mx-5 my-5">
+                                                <div class="row g-0 d-flex align-items-center">
+                                                    <div class="col-md-5">
+                                                        <div class="card-body">
+                                                            <h1 class="card-title">
+                                                                <%= cluster.name.toUpperCase() %>
+                                                            </h1>
+                                                            <p class="card-text">
+                                                                <%= cluster.description %>
+                                                            </p>
+                                                            <div class="cluster-spec table-responsive">
+                                                                <table class="table mt-3 align-middle">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td><img src="/metroland/assets/icons/bedroom.png"
+                                                                                    class="">
+                                                                            </td>
+                                                                            <td>Kamar Tidur</td>
+                                                                            <td class="text-end">
+                                                                                <%= cluster.total_badroom%>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><img src="/metroland/assets/icons/bathroom.png"
+                                                                                    class="">
+                                                                            </td>
+                                                                            <td>Kamar Mandi</td>
+                                                                            <td class="text-end">
+                                                                                <%= cluster.total_bathroom%>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><img src="/metroland/assets/icons/garage.png"
+                                                                                    class="">
+                                                                            </td>
+                                                                            <td>Garasi</td>
+                                                                            <td class="text-end">
+                                                                                <%= cluster.total_garage%>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><img src="/metroland/assets/icons/area.png"
+                                                                                    class="">
+                                                                            </td>
+                                                                            <td>Luas Tanah</td>
+                                                                            <td class="text-end">
+                                                                                <%= cluster.area%>M<sup>2</sup>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><img src="/metroland/assets/icons/home.png"
+                                                                                    class="">
+                                                                            </td>
+                                                                            <td>Luas Bangunan</td>
+                                                                            <td class="text-end">
+                                                                                <%= cluster.building_area%>M<sup>2</sup>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="spec-img col-md-7">
+                                                        <div id="carouselExample" class="carousel carousel-dark slide">
+                                                            <div class="carousel-inner">
+                                                                <%let ciNo=1; cluster.ClusterImages.forEach(ci=>{%>
+                                                                    <div class="carousel-item <%-ciNo == 1?" active":""
+                                                                        %>">
+                                                                        <img src="/metroland/assets/img/<%= ci.image %>"
+                                                                            class="d-block w-100">
+                                                                    </div>
+                                                                    <%ciNo++})%>
+                                                            </div>
+                                                            <button class="carousel-control-prev" type="button"
+                                                                data-bs-target="#carouselExample" data-bs-slide="prev">
+                                                                <span
+                                                                    class="carousel-control-prev-icon bg-dark rounded-2"
+                                                                    aria-hidden="true"></span>
+                                                                <span class="visually-hidden">Previous</span>
+                                                            </button>
+                                                            <button class="carousel-control-next" type="button"
+                                                                data-bs-target="#carouselExample" data-bs-slide="next">
+                                                                <span
+                                                                    class="carousel-control-next-icon bg-dark rounded-2"
+                                                                    aria-hidden="true"></span>
+                                                                <span class="visually-hidden">Next</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </div>
+                            <%no_++});%>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid bg-white mt-5 py-5">
+            <div class="container text-center py-5">
+                <h1 class="pb-3">Site Plan</h1>
+                <img class="img-fluid" src="/metroland/assets/img/siteplan.png">
+            </div>
+        </div>
+
+        <div class="container-fluid py-3" id="fasilitas">
+            <div class="container-fluid py-3 px-1 text-center">
+                <h1 class="text-center">Fasilitas</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, sequi.</p>
+                <div class="row pt-5">
+                    <div class="col-md-3 col-sm-6 mb-2">
+                        <div class="card mx-auto">
+                            <img src="/metroland/assets/img/taman-bermain.png" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Taman Bermain Anak</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-2">
+                        <div class="card mx-auto">
+                            <img src="/metroland/assets/img/masjid.png" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Masjid</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-2">
+                        <div class="card mx-auto">
+                            <img src="/metroland/assets/img/clubhouse.png" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Clubhouse</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-2">
+                        <div class="card mx-auto">
+                            <img src="/metroland/assets/img/gym.png" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Gym</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- akses -->
+        <div class="container-fluid bg-white py-5" id="brand-value">
+            <div class="container-fluid text-center py-md-5">
+                <h1>Akses</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, unde.</p>
+                <div class="row pt-5 px-1">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="symbol symbol-50px symbol-circle"><img class="symbol-label"
+                                src="/metroland/assets/img/tol.png"></div>
+                        <h2>5 Menit ke gerbang tol JORR</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, commodi!</p>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="symbol symbol-50px symbol-circle"><img class="symbol-label"
+                                src="/metroland/assets/img/halte busway.png"></div>
+                        <h2>10 Menit ke Halte Busway</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, commodi!</p>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="symbol symbol-50px symbol-circle"><img class="symbol-label"
+                                src="/metroland/assets/img/stasiun.png"></div>
+                        <h2>15 Menit ke Stasiun</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, commodi!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- lokasi -->
+        <div>
+            <div id="lokasi" class="z-depth-1-half map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126934.52850657306!2d106.89173253906249!3d-6.170372399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698a4d1f38b353%3A0x69075bc2ab417320!2sKantor%20Pemasaran%20Victoria%20by%20METROLAND!5e0!3m2!1sid!2sid!4v1698081622789!5m2!1sid!2sid"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <a href="https://wa.me/6281210012200?text=Hi%20Metroland" class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
+
+        <%- include('../layouts/f_footer') %>
+
+
+            <%- include('../layouts/f_end') %>

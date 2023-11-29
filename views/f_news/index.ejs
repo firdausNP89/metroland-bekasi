@@ -1,0 +1,61 @@
+<%- include('../layouts/f_header') %>
+    <%- include('../layouts/f_menu_general') %>
+
+        <!--CONTENT-->
+        <div class="hero-image">
+            <img src="/metroland/assets/img/Aglonema.jpg" class="img-fluid">
+        </div>
+        <div class="container-fluid bg-white py-5" id="berita">
+            <div class="container-fluid py-5 px-sm-3">
+                <h1 class="text-center">Berita & Event</h1>
+                <div class="row pt-5 gy-5">
+                    <% rows.forEach(n=>{%>
+
+                        <div class="col-md-4">
+                            <div class="card mx-auto h-100 w-100">
+                                <a href="/metroland/berita/<%= n.id %>/detail">
+                                    <%if(n.image_thubnail==null){%>
+                                        <img class="img-fluid img-thumbnail card-img-top h-100px"
+                                            src="/metroland/assets/image_news_thubnail/noimage.png">
+                                        <%}else{%>
+                                            <img class="img-fluid img-thumbnail card-img-top h-100px"
+                                                src="/metroland/assets/image_news_thubnail/<%= n.image_thubnail %>">
+                                            <%}%>
+                                </a>
+                                <div class="card-body">
+                                    <a href="/metroland/berita/<%= n.id %>/detail">
+                                        <h5 class="card-title">
+                                            <%= n.title %>
+                                        </h5>
+                                    </a>
+                                    <p class="card-text">
+                                        <%= JSDOM.fragment(n.description.substring(0,250)).textContent%>...
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-secondary">Last updated
+                                        <% var currentDate=moment(new Date()); var updated_at=moment(n.updated_at); %>
+                                            <%= currentDate.diff(updated_at , 'days' ) %> days ago
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <%})%>
+
+                </div>
+            </div>
+
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <ul class="pagination pagination-sm pull-right text-center" id="pagination-table">
+                    <%- pagination %>
+                </ul>
+            </div>
+        </div>
+        <a href="https://wa.me/6281210012200?text=Hi%20Metroland" class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
+
+        <%- include('../layouts/f_footer') %>
+            <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+            <script src="/metroland/assets/js/front_end/news/index.js"></script>
+            <%- include('../layouts/f_end') %>

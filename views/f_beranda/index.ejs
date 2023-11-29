@@ -1,0 +1,237 @@
+<%- include('../layouts/f_header') %>
+    <%- include('../layouts/f_menu_beranda') %>
+
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/metroland/assets/img/Aglonema.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/metroland/assets/img/Torino.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/metroland/assets/img/Untitled-1.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- produk -->
+        <div class="container-fluid py-2" id="produk">
+            <div class="container-fluid px-md-5">
+                <% let number=1; products.forEach(product=> {
+
+                    const title=product.title.split(" ");const totWord = title.length;
+                    if(number % 2 === 0){%>
+
+                    <div class=" card mx-auto mx-5 my-5">
+                        <div class="row g-0 d-flex align-items-center">
+                            <div class="col-md-6">
+                                <img src="/metroland/assets/img/Torino.jpg" class="img-fluid float-start" alt="...">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h1 class="card-title-product text-uppercase">
+                                        <%= product.title.replace(title[totWord-1] , '' )%>
+                                            <% if(totWord> 1){%>
+                                                <span
+                                                    style="color: #9B927F; text-decoration: underline; text-underline-offset: 10px; text-decoration-thickness: 4px ;">
+                                                    <%= title[totWord-1]%>
+                                                </span>
+                                                <%}%>
+                                    </h1>
+                                    <p class="card-text">
+                                        <%= JSDOM.fragment(product.content.substring(0,350)).textContent%>...
+                                    </p>
+                                    <a href="/metroland/produk/<%= product.id %>">Selanjutnya <img
+                                            src="/metroland/assets/img/arrow.png"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <%}else{%>
+                        <div class="card mx-auto mx-5 my-5">
+                            <div class="row g-0 d-flex align-items-center">
+                                <div class="col-md-6">
+                                    <div class="card-body text-end">
+                                        <h1 class="card-title-product text-uppercase">
+                                            <%= product.title.replace(title[totWord-1] , '' )%>
+                                                <% if(totWord> 1){%>
+                                                    <span
+                                                        style="color: #9B927F; text-decoration: underline; text-underline-offset: 10px; text-decoration-thickness: 4px ;">
+                                                        <%= title[totWord-1]%>
+                                                    </span>
+                                                    <%}%>
+                                        </h1>
+                                        <p class="card-text text-start">
+                                            <%= JSDOM.fragment(product.content.substring(0,350)).textContent%>...
+                                        </p>
+                                        <a href="/metroland/produk/<%= product.id %>">Selanjutnya <img
+                                                src="/metroland/assets/img/arrow.png"></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="/metroland/assets/img/Torino.jpg" class="img-fluid float-end" alt="...">
+                                </div>
+                            </div>
+                        </div>
+
+                        <%}number++});%>
+
+            </div>
+            <div class="text-center">
+                <button class="btn-primary">
+                    <a href="#">Lihat Semua Produk</a>
+                </button>
+            </div>
+        </div>
+
+        <!-- brand value -->
+        <div class="container-fluid bg-white my-5 py-5" id="brand-value">
+            <div class="container-fluid text-center py-md-5">
+                <h1>Kenapa harus memilih perumahan Metroland?</h1>
+                <div class="row pt-5 px-1">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="symbol symbol-50px symbol-circle">
+                            <img class="symbol-label" src="/metroland/assets/img/akses.png">
+                        </div>
+                        <h2>Akses & Transportasi Mudah</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, commodi!</p>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="symbol symbol-50px symbol-circle"><img src="/metroland/assets/img/lokasi.png"
+                                class="symbol-label"></div>
+                        <h2>Lokasi Strategis</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, commodi!</p>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="symbol symbol-50px symbol-circle"><img src="/metroland/assets/img/investasi.png"
+                                class="symbol-label"></div>
+                        <h2>Investasi Tepat</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, commodi!</p>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="symbol symbol-50px symbol-circle"><img src="/metroland/assets/img/harga.png"
+                                class="symbol-label"></div>
+                        <h2>Harga terjangkau</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, commodi!</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- simulasi kpr -->
+        <div class="container-fluid py-5" id="simulasi">
+            <div class="container text-center py-5">
+                <h1>Simulasi KPR</h1>
+                <h3>Bebas Biaya</h3>
+                <h3>KPR,AJB,BPHTB</h3>
+                <p>Di sini anda dapat mensimulasikan biaya KPR dengan bank-bank yang tersedia.</p>
+                <div class="img-fluid p-3">
+                    <img src="/metroland/assets/img/bank-mandiri.png">
+                    <img src="/metroland/assets/img/bank-bri.png">
+                    <img src="/metroland/assets/img/bank-btn.png">
+                    <img src="/metroland/assets/img/bank-bni.png">
+                </div>
+                <div class="img-fluid pt-3">
+                    <img src="/metroland/assets/img/bank-dki.png">
+                    <img src="/metroland/assets/img/bank-bjb.png">
+                    <img src="/metroland/assets/img/bank-danamon.png">
+                    <img src="/metroland/assets/img/bank-bsi.png">
+                </div>
+
+                <button class="btn-primary my-5">
+                    <a href=""><img src="/metroland/assets/img/simulasi kpr.png"
+                            style="height: 25px; margin: auto; padding-right: 10px;">Simulasi KPR</a>
+                </button>
+            </div>
+        </div>
+
+        <!-- berita & event -->
+        <div class="container-fluid bg-white py-5" id="berita">
+            <div class="container-fluid py-5 px-3">
+                <h1 class="text-center">Berita & Event</h1>
+                <div class="row pt-5 gy-5">
+                    <% news.forEach(n=>{%>
+
+                        <div class="col-md-4">
+                            <div class="card mx-auto h-100 w-100">
+                                <a href="/metroland/berita/<%= n.id %>/detail">
+                                    <%if(n.image_thubnail==null){%>
+                                        <img class="img-fluid img-thumbnail card-img-top h-100px"
+                                            src="/metroland/assets/image_news_thubnail/noimage.png">
+                                        <%}else{%>
+                                            <img class="img-fluid img-thumbnail card-img-top h-100px"
+                                                src="/metroland/assets/image_news_thubnail/<%= n.image_thubnail %>">
+                                            <%}%>
+                                </a>
+                                <div class="card-body">
+                                    <a href="/metroland/berita/<%= n.id %>/detail">
+                                        <h5 class="card-title">
+                                            <%= n.title %>
+                                        </h5>
+                                    </a>
+                                    <p class="card-text">
+                                        <%= JSDOM.fragment(n.description.substring(0,250)).textContent%>...
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-secondary">Last updated
+                                        <% var currentDate=moment(new Date()); var updated_at=moment(n.updated_at); %>
+                                            <%= currentDate.diff(updated_at , 'days' ) %> days ago
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <%})%>
+
+                </div>
+                <div class="text-center mt-5">
+                    <button class="btn-primary">
+                        <a href="/metroland/berita">Lihat Semua Berita</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- lokasi -->
+        <div>
+            <div id="lokasi" class="z-depth-1-half map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126934.52850657306!2d106.89173253906249!3d-6.170372399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698a4d1f38b353%3A0x69075bc2ab417320!2sKantor%20Pemasaran%20Victoria%20by%20METROLAND!5e0!3m2!1sid!2sid!4v1698081622789!5m2!1sid!2sid"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <a href="https://wa.me/6281210012200?text=Hi%20Metroland" class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
+
+        <%- include('modal') %>
+            <%- include('../layouts/f_footer') %>
+                <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+                <script src="/metroland/assets/js/front_end/beranda/index.js"></script>
+                <%- include('../layouts/f_end') %>

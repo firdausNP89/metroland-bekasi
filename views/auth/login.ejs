@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Metroland
+    </title>
+
+    <meta charset="utf-8" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:title" content="Metroland" />
+    <meta property="og:description" content="Portal website perumahan Metroland" />
+    <link rel="shortcut icon" href="/metroland/assets/img/metroland_icon.png" />
+    <link href="/metroland/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="/metroland/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="/metroland/assets/css/style.my.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="kt_body" class="auth-bg">
+    <div class="d-flex flex-column flex-root">
+        <div class="d-flex flex-column flex-lg-row mt-sm-20 flex-column-fluid align-items-center">
+            <div class="d-flex flex-column flex-lg-row-fluid py-10">
+                <div class="flex-center flex-column flex-column-fluid">
+                    <div class="w-lg-500px w-md-700px p-5 p-lg-10 mx-auto shadow mb-5 bg-body rounded">
+                        <%- include('login-alert') %>
+                            <%- include('login-form') %>
+                    </div>
+                    <div class="d-flex flex-column-reverse flex-center flex-wrap fs-6 p-5 pb-0">
+                        <a class="text-muted text-hover-primary px-2">&copy; 2023 PT Metroland
+                            Indonesia</a>
+                        <!-- <img src="/metroland/img/login_footer.png" alt="" class="w-150px"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('login-script') %>
+</body>
+
+</html>

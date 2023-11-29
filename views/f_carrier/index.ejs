@@ -1,0 +1,39 @@
+<%- include('../layouts/f_header') %>
+    <%- include('../layouts/f_menu_general') %>
+
+        <!--CONTENT-->
+        <div class="hero-image">
+            <img src="/metroland/assets/img/Aglonema.jpg" class="img-fluid">
+        </div>
+        <div class="container-fluid py-5" id="karir">
+            <div class="container-fluid py-5 px-5">
+                <h1 class="text-center">Karir</h1>
+                <div class="row pt-5 gy-5">
+                    <% rows.forEach(element=> { %>
+                        <div class="col-md-4">
+                            <div class="card mx-auto">
+                                <img src="/metroland/assets/img/karir.png" class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title text-uppercase">
+                                        <%= element.department.name %>
+                                    </h5>
+                                    <a href="">
+                                        <p class="card-text">Job Detail <img
+                                                src="/metroland/assets/img/arrow-right.svg">
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+            </div>
+        </div>
+        <a href="https://wa.me/6281210012200?text=Hi%20Metroland" class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
+
+        <%- include('../layouts/f_footer') %>
+            <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+            <script src="/metroland/assets/js/front_end/carrier/index.js"></script>
+            <%- include('../layouts/f_end') %>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Metroland</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:locale" content="id_ID" />
+    <link rel="shortcut icon" href="/metroland/img/logo-sm.png" />
+    <link href="/metroland/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="/metroland/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <!-- google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+    <!-- custom style-->
+    <link href="/metroland/assets/css/style.my.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="kt_body"
+    class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled aside-fixed aside-default-enabled">
+    <div class="d-flex flex-column flex-root">
+        <div class="page d-flex flex-row flex-column-fluid">
+            <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+                <div id="kt_header" class="header" data-kt-sticky="true" data-kt-sticky-name="header"
+                    data-kt-sticky-offset="{default: '200px', lg: '300px'}">
+                    <div class="container-fluid d-flex align-items-stretch justify-content-between mt-3">
+                        <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
+                            <div class="d-flex align-items-center d-lg-none">
+                                <div class="btn btn-icon btn-active-color-primary ms-n2 me-1" id="kt_aside_toggle">
+                                    <span class="svg-icon svg-icon-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <path
+                                                d="M21 7H3C2.4 7 2 6.6 2 6V4C2 3.4 2.4 3 3 3H21C21.6 3 22 3.4 22 4V6C22 6.6 21.6 7 21 7Z"
+                                                fill="black" />
+                                            <path opacity="0.3"
+                                                d="M21 14H3C2.4 14 2 13.6 2 13V11C2 10.4 2.4 10 3 10H21C21.6 10 22 10.4 22 11V13C22 13.6 21.6 14 21 14ZM22 20V18C22 17.4 21.6 17 21 17H3C2.4 17 2 17.4 2 18V20C2 20.6 2.4 21 3 21H21C21.6 21 22 20.6 22 20Z"
+                                                fill="black" />
+                                        </svg>
+                                    </span>
+                                    `
+                                </div>
+                            </div>
+                            <a href="#" class="d-lg-none">
+                                <img alt="Logo" src="/metroland/assets/img/metroland_icon.png" class="mh-40px" />
+                            </a>
+                            <div class="btn btn-icon w-auto ps-0 btn-active-color-primary d-none d-lg-inline-flex align-items-center me-2 me-lg-5"
+                                data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body"
+                                data-kt-toggle-name="aside-minimize">
+                                <span class="svg-icon svg-icon-1 rotate-180">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-list" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                                    </svg>
+                                </span>
+                                <span class="ms-3 mt-1 text-dark h1 sheader-font align-bottom">
+                                    <%= header %>
+                                </span>
+
+
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
+                            <div class="d-flex align-items-stretch me-1">
+                            </div>
+
+                            <div class="d-flex align-items-stretch flex-shrink-0">
+
+                                <!-- start notification-->
+                                <div class="d-flex align-items-center ms-1 ms-lg-2">
+                                    <!--begin::Menu wrapper-->
+                                    <div class="btn btn-icon position-relative btn-active-light-primary w-35px h-35px w-md-45px h-md-45px"
+                                        data-kt-menu-trigger="click" data-kt-menu-attach="parent"
+                                        data-kt-menu-placement="bottom-end">
+                                        <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
+                                        <span class="svg-icon svg-icon-2 mt-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+                                            </svg>
+                                        </span>
+                                        <div class="badge badge-circle bg-danger position-absolute end-0 top-0 h-6">
+                                            <span id="total_notification">0</span>
+                                        </div>
+                                        <!--end::Svg Icon-->
+                                    </div>
+                                    <!--begin::Menu-->
+                                    <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px"
+                                        data-kt-menu="true">
+                                        <!--begin::Heading-->
+                                        <div class="d-flex flex-column bgi-no-repeat rounded-top">
+                                            <!--begin::Title-->
+                                            <h3 class="text-dark fw-bold px-9 mt-10 mb-6">Notifications
+                                            </h3>
+                                        </div>
+                                        <div class="separator border-3 mb-2"></div>
+                                        <div class="card-body">
+                                            <div class="scroll-y mh-325px px-1" id="body_notification">
+
+
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <!--end::Menu-->
+                                    <!--end::Menu wrapper-->
+                                </div>
+                                <!-- end notification-->
+
+                                <!-- start user login-->
+                                <div class="d-flex align-items-center ms-2 ms-lg-3" id="kt_header_user_menu_toggle">
+                                    <!--begin::Menu wrapper-->
+                                    <div class="cursor-pointer symbol symbol-20px symbol-lg-40px"
+                                        data-kt-menu-trigger="click" data-kt-menu-attach="parent"
+                                        data-kt-menu-placement="bottom-end">
+                                        <div class="symbol symbol-20px symbol-circle">
+                                            <div class="symbol-label bg-light-primary fs-2 fw-bold text-success">
+                                                <span class="lbl-current-user">?</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px"
+                                        data-kt-menu="true">
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <div class="menu-content d-flex align-items-center px-3">
+
+                                                <div class="symbol symbol-50px me-5">
+                                                    <div class="symbol-label fs-2 fw-bold text-success">
+                                                        <span class="lbl-current-user">?</span>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-column">
+                                                    <div class="fw-bolder d-flex align-items-center fs-5">
+                                                        <span id="lbl-name-current-user"></span>
+                                                    </div>
+                                                    <a href="#" class="fw-bold text-muted text-hover-primary fs-7">
+                                                        <span id="lbl-name-current-mail"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="separator my-2"></div>
+                                        <div class="menu-item px-5">
+                                            <a href="/prodesk/profile" class="menu-link px-5">Profile</a>
+                                        </div>
+                                        <div class="separator my-2"></div>
+                                        <div class="menu-item px-5">
+                                            <a href="/prodesk/doLogout" class="menu-link px-5">Sign Out</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!-- end user login-->
+                            </div>
+                        </div>
+                    </div>
+                </div>

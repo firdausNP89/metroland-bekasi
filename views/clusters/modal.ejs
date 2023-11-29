@@ -1,0 +1,371 @@
+<!-- START: MODAL ADD CLUSTER-->
+<div class="modal fade" id="mdl-add-cluster" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">CLUSTER ADD FORM</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="mdl-form-add-cluster" class="form" action="#" autocomplete="off">
+
+                    <input type="hidden" id="mdl-edit-cluster-id" />
+                    <div class="fv-row form-floating mb-7">
+                        <input type="text" class="form-control" name="cluster_name" id="mdl-name-cluster-name"
+                            placeholder="" />
+                        <label for="floatingInput" class="required">Cluster</label>
+                    </div>
+
+                    <div class="fv-row form-floating mb-7">
+                        <textarea name="mdl_add_description_cluster" class="form-control"
+                            id="mdl_add_description_cluster" rows="5"></textarea>
+                        <label for="floatingInput" class="required">Description</label>
+                    </div>
+                    <div class="mb-5">
+                        <h3 class="fs-md-3 text-dark mb-6">Specifications</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div>
+                                <div class="d-inline-flex mb-2">
+                                    <div class="badge badge-light">
+                                        <div class="symbol symbol-20px me-3">
+                                            <img src="/metroland/assets/icons/bedroom.png" class alt>
+                                        </div>
+                                        <span>Total bedrooms for this cluster</span>
+                                    </div>
+                                </div>
+                                <div class="fv-row form-floating mb-7">
+                                    <input type="text" class="form-control" name="total_bedrooms"
+                                        id="mdl-name-cluster-bedrooms" placeholder="" />
+                                    <label for="floatingInput" class="required">Bedrooms</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <div class="d-inline-flex mb-2">
+                                    <div class="badge badge-light">
+                                        <div class="symbol symbol-20px me-3">
+                                            <img src="/metroland/assets/icons/bathroom.png" class alt>
+                                        </div>
+                                        <span>Total bathroom for this cluster</span>
+                                    </div>
+                                </div>
+                                <div class="fv-row form-floating mb-7">
+                                    <input type="text" class="form-control" name="total_bathroom"
+                                        id="mdl-add-cluster-bathroom" placeholder="" />
+                                    <label for="floatingInput" class="required">Bathroom</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div>
+                                <div class="d-inline-flex mb-2">
+                                    <div class="badge badge-light">
+                                        <div class="symbol symbol-20px me-3">
+                                            <img src="/metroland/assets/icons/garage.png" class alt>
+                                        </div>
+                                        <span>Total garage for this cluster</span>
+                                    </div>
+                                </div>
+                                <div class="fv-row form-floating mb-7">
+                                    <input type="text" class="form-control" name="total_garage"
+                                        id="mdl-add-cluster-garage" placeholder="" />
+                                    <label for="floatingInput" class="required">Garage</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div>
+                                <div class="d-inline-flex mb-2">
+                                    <div class="badge badge-light">
+                                        <div class="symbol symbol-20px me-3">
+                                            <img src="/metroland/assets/icons/area.png" class alt>
+                                        </div>
+                                        <span>Total area for this cluster</span>
+                                    </div>
+                                </div>
+                                <div class="fv-row form-floating mb-7">
+                                    <input type="text" class="form-control" name="total_area" id="mdl-add-cluster-area"
+                                        placeholder="" />
+                                    <label for="floatingInput" class="required">Area</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div>
+                                <div class="d-inline-flex mb-2">
+                                    <div class="badge badge-light">
+                                        <div class="symbol symbol-20px me-3">
+                                            <img src="/metroland/assets/icons/home.png" class alt>
+                                        </div>
+                                        <span>Total building area for this cluster</span>
+                                    </div>
+                                </div>
+                                <div class="fv-row form-floating mb-7">
+                                    <input type="text" class="form-control" name="total_home" id="mdl-add-cluster-home"
+                                        placeholder="" />
+                                    <label for="floatingInput" class="required">Building Area</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="fs-md-3 text-dark mb-6">Location</h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div>
+                                <div class="d-inline-flex mb-2">
+                                    <div class="badge badge-light">
+                                        <div class="symbol symbol-20px me-3">
+                                            <span class="svg-icon svg-icon-2 svg-icon-warning">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                                                    <path
+                                                        d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <span>This is the latitude for this cluster location</span>
+                                    </div>
+                                </div>
+                                <div class="fv-row form-floating mb-7">
+                                    <input type="text" class="form-control" name="latitude"
+                                        id="mdl-add-cluster-latitude" placeholder="" />
+                                    <label for="floatingInput">Latitude</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <div class="d-inline-flex mb-2">
+                                    <div class="badge badge-light">
+                                        <div class="symbol symbol-20px me-3">
+                                            <span class="svg-icon svg-icon-2 svg-icon-warning">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                                                    <path
+                                                        d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <span>this is the longitude for this cluster location</span>
+                                    </div>
+                                </div>
+                                <div class="fv-row form-floating mb-7">
+                                    <input type="text" class="form-control" name="longitude"
+                                        id="mdl-add-cluster-longitude" placeholder="" />
+                                    <label for="floatingInput">Longitude</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" id="mdl-btn-add-cluster" class="btn btn-primary btn-sm">Change</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FINISH: MODAL ADD CLUSTER-->
+
+
+<div class="modal fade" id="mdl-edit-cluster" data-bs-backdrop="static" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">CLUSTER CHANGE FORM</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="mdl-form-edit-cluster" class="form" action="#" autocomplete="off">
+
+                    <input type="hidden" id="mdl-edit-cluster-id" />
+                    <div class="fv-row form-floating mb-7">
+                        <input type="text" class="form-control" name="cluster_name" id="mdl-edit-cluster-name"
+                            placeholder="" />
+                        <label for="floatingInput" class="required">Cluster</label>
+                    </div>
+
+                    <div class="fv-row form-floating mb-7">
+                        <textarea name="mdl_edit_description_cluster" class="form-control"
+                            id="mdl_edit_description_cluster" rows="5"></textarea>
+                        <label for="floatingInput" class="required">Description</label>
+                    </div>
+                    <div class="mb-5">
+                        <h3 class="fs-md-3 text-dark mb-6">Specifications</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div>
+                                <div class="d-inline-flex mb-2">
+                                    <div class="badge badge-light">
+                                        <div class="symbol symbol-20px me-3">
+                                            <img src="/metroland/assets/icons/bedroom.png" class alt>
+                                        </div>
+                                        <span>Total bedrooms for this cluster</span>
+                                    </div>
+                                </div>
+                                <div class="fv-row form-floating mb-7">
+                                    <input type="text" class="form-control" name="total_bedrooms"
+                                        id="mdl-edit-cluster-bedrooms" placeholder="" />
+                                    <label for="floatingInput" class="required">Bedrooms</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <div class="d-inline-flex mb-2">
+                                    <div class="badge badge-light">
+                                        <div class="symbol symbol-20px me-3">
+                                            <img src="/metroland/assets/icons/bathroom.png" class alt>
+                                        </div>
+                                        <span>Total bathroom for this cluster</span>
+                                    </div>
+                                </div>
+                                <div class="fv-row form-floating mb-7">
+                                    <input type="text" class="form-control" name="total_bathroom"
+                                        id="mdl-edit-cluster-bathroom" placeholder="" />
+                                    <label for="floatingInput" class="required">Bathroom</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div>
+                                <div class="d-inline-flex mb-2">
+                                    <div class="badge badge-light">
+                                        <div class="symbol symbol-20px me-3">
+                                            <img src="/metroland/assets/icons/garage.png" class alt>
+                                        </div>
+                                        <span>Total garage for this cluster</span>
+                                    </div>
+                                </div>
+                                <div class="fv-row form-floating mb-7">
+                                    <input type="text" class="form-control" name="total_garage"
+                                        id="mdl-edit-cluster-garage" placeholder="" />
+                                    <label for="floatingInput" class="required">Garage</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div>
+                                <div class="d-inline-flex mb-2">
+                                    <div class="badge badge-light">
+                                        <div class="symbol symbol-20px me-3">
+                                            <img src="/metroland/assets/icons/area.png" class alt>
+                                        </div>
+                                        <span>Total area for this cluster</span>
+                                    </div>
+                                </div>
+                                <div class="fv-row form-floating mb-7">
+                                    <input type="text" class="form-control" name="total_area" id="mdl-edit-cluster-area"
+                                        placeholder="" />
+                                    <label for="floatingInput" class="required">Area</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div>
+                                <div class="d-inline-flex mb-2">
+                                    <div class="badge badge-light">
+                                        <div class="symbol symbol-20px me-3">
+                                            <img src="/metroland/assets/icons/home.png" class alt>
+                                        </div>
+                                        <span>Total building area for this cluster</span>
+                                    </div>
+                                </div>
+                                <div class="fv-row form-floating mb-7">
+                                    <input type="text" class="form-control" name="total_home" id="mdl-edit-cluster-home"
+                                        placeholder="" />
+                                    <label for="floatingInput" class="required">Building Area</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="fs-md-3 text-dark mb-6">Location</h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div>
+                                <div class="d-inline-flex mb-2">
+                                    <div class="badge badge-light">
+                                        <div class="symbol symbol-20px me-3">
+                                            <span class="svg-icon svg-icon-2 svg-icon-warning">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                                                    <path
+                                                        d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <span>This is the latitude for this cluster location</span>
+                                    </div>
+                                </div>
+                                <div class="fv-row form-floating mb-7">
+                                    <input type="text" class="form-control" name="latitude"
+                                        id="mdl-edit-cluster-latitude" placeholder="" />
+                                    <label for="floatingInput">Latitude</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <div class="d-inline-flex mb-2">
+                                    <div class="badge badge-light">
+                                        <div class="symbol symbol-20px me-3">
+                                            <span class="svg-icon svg-icon-2 svg-icon-warning">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                                                    <path
+                                                        d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <span>this is the longitude for this cluster location</span>
+                                    </div>
+                                </div>
+                                <div class="fv-row form-floating mb-7">
+                                    <input type="text" class="form-control" name="longitude"
+                                        id="mdl-edit-cluster-longitude" placeholder="" />
+                                    <label for="floatingInput">Longitude</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" id="mdl-btn-edit-cluster" class="btn btn-primary btn-sm">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>

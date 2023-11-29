@@ -1,0 +1,123 @@
+<!-- ADD PRODUCT-->
+<div class="modal fade" id="mdl-add-product" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">FORM TAMBAH PRODUK</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="mdl-form-add-product" class="form" action="/metroland/auth/products" method="post"
+                    autocomplete="off">
+
+                    <div class="fv-row form-floating mb-7">
+                        <input type="text" class="form-control" name="product_title" id="mdl-add-title-product"
+                            placeholder="" />
+                        <label for="floatingInput" class="required">Judul Produk</label>
+                    </div>
+
+                    <div class="fv-row mb-7">
+                        <textarea name="mdl_add_content_product" class="editor" id="mdl-add-content-product">
+                        </textarea>
+                    </div>
+
+                    <div class="fv-row mb-7">
+                        <label class="d-block fw-bold fs-6 mb-5">
+                            <span>Logo Produk</span>
+                            <i class="fas fa-info-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Logo produk."></i>
+                        </label>
+                        <div class="image-input image-input-empty image-input-outline" data-kt-image-input="true">
+                            <div class="image-input-wrapper w-125px h-125px"></div>
+
+                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                data-kt-image-input-action="change" data-bs-toggle="tooltip"
+                                title="Pilih foto untuk logo produk">
+                                <i class="bi bi-pencil-fill fs-7"></i>
+                                <input type="file" name="logo_produk" id="logo_produk" accept=".png, .jpg, .jpeg" />
+                                <input type="hidden" name="avatar_remove" />
+                            </label>
+                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                data-kt-image-input-action="cancel" data-bs-toggle="tooltip"
+                                title="Batalkan foto produk">
+                                <i class="bi bi-x fs-2"></i>
+                            </span>
+
+                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                <i class="bi bi-x fs-2"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="d-inline-flex mb-2">
+                            <div class="badge badge-light">
+                                <div class="symbol symbol-20px me-3">
+                                    <span class="svg-icon svg-icon-2 svg-icon-warning">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-house-check" viewBox="0 0 16 16">
+                                            <path
+                                                d="M7.293 1.5a1 1 0 0 1 1.414 0L11 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l2.354 2.353a.5.5 0 0 1-.708.708L8 2.207l-5 5V13.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 2 13.5V8.207l-.646.647a.5.5 0 1 1-.708-.708L7.293 1.5Z" />
+                                            <path
+                                                d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.707l.547.547 1.17-1.951a.5.5 0 1 1 .858.514Z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <span>Tambahkan cluster untuk produk ini
+                                    (<code>cluster hanya yang sudah terdaftar</code>)</span>
+                            </div>
+                        </div>
+                        <div class="fv-row mb-7">
+                            <select class="form-select rounded-start-0" name="mdl_clusters" data-control="select2"
+                                id="mdl_clusters" data-placeholder="Pilih Cluster" data-allow-clear="true"
+                                multiple="multiple">
+
+                            </select>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="mdl-btn-cancle-product" class="btn btn-secondary btn-sm">Batal</button>
+                <button type="button" id="mdl-btn-add-product" class="btn btn-primary btn-sm">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- UPDATE PRODUCT-->
+<div class="modal fade" id="mdl-edit-product" data-bs-backdrop="static" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">PRODUCT CHANGE FORM</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="mdl-form-edit-product" class="form" action="#" autocomplete="off">
+
+                    <input type="hidden" id="mdl-edit-product-id" />
+                    <div class="fv-row form-floating mb-7">
+                        <input type="text" class="form-control" name="product_title" id="mdl-edit-title-product"
+                            placeholder="" />
+                        <label for="floatingInput" class="required">Judul Produk</label>
+                    </div>
+
+                    <div class="fv-row mb-7">
+                        <textarea name="mdl_edit_content_product" class="editor" id="mdl-edit-content-product">
+                        </textarea>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" id="mdl-btn-edit-product" class="btn btn-primary btn-sm">Change</button>
+            </div>
+        </div>
+    </div>
+</div>

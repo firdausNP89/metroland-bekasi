@@ -1,0 +1,139 @@
+<%- include('../layouts/header-ui') %>
+    <meta name="csrf-token" content="<%= csrfToken %>">
+    <div class="content fs-6 d-flex flex-column flex-column-fluid" id="kt_content">
+        <div class="post fs-6 d-flex flex-column-fluid border border-top-1 border-left-1 border-right-0 border-bottom-0"
+            id="kt_post">
+            <div class="container-xxl">
+                <div class="card col-lg-12 mb-12 mb-lg-0">
+
+                    <form class="form mb-5 ms-5" role="form" method="get" action="news">
+                        <div class="row p-5">
+                            <div class="col-md-5 fv-row">
+
+                                <input type="text" class="form-control form-control-solid required"
+                                    placeholder="search by news title" name="q" id="q" maxlength="50"
+                                    autocomplete="off" />
+                            </div>
+                            <div class="col-md-4 fv-row">
+                                <button type="submit" id="btn-search" class="btn btn-primary btn-sm">
+                                    <span class="svg-icon icon-icon-6"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2"
+                                                rx="1" transform="rotate(45 17.0365 15.1223)" fill="black" />
+                                            <path
+                                                d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
+                                                fill="black" />
+                                        </svg></span>
+                                    Cari Berita
+                                </button>
+                                <button type="button" id="btn-add-news" class="btn btn-success btn-sm">
+                                    <span class="svg-icon icon-icon-6">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5z" />
+                                            <path
+                                                d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z" />
+                                        </svg>
+                                    </span>
+                                    Tambah Berita
+                                </button>
+
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="table-responsive">
+                        <table class="table text-center m-2">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th class="col-6">Judul & Isi</th>
+                                    <th>Tanggal Pembuatan</th>
+                                    <th>Tindakan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%let no=1; rows.forEach(news=>{%>
+
+                                    <tr>
+                                        <td>
+                                            <%= no %>
+                                        </td>
+                                        <td>
+                                            <div class="ps-3 text-start">
+                                                <span
+                                                    class="text-gray-800 fw-boldest fs-5 text-hover-primary mb-1 text-start">
+                                                    <%= news.title %>
+                                                </span>
+                                            </div>
+                                            <span class="text-gray-400 fw-bold d-block text-start">
+
+                                                <%= news.description !=null ?
+                                                    JSDOM.fragment(news.description.substring(0,150)).textContent+'...':'-'
+                                                    %>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <%= moment(news.created_at).format( 'DD-MMMM-YYYY HH:mm' ) %>
+                                        </td>
+                                        <td>
+                                            <div class="me-0">
+                                                <button
+                                                    class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
+                                                    data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                                    <i class="bi bi-three-dots-vertical fs-4"></i>
+                                                </button>
+                                                <!--begin::Menu 3-->
+                                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3"
+                                                    data-kt-menu="true">
+                                                    <!--begin::Heading-->
+                                                    <div class="menu-item px-3">
+                                                        <div
+                                                            class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">
+                                                            Actions</div>
+                                                    </div>
+                                                    <div class="menu-item px-3">
+                                                        <a class="menu-link flex-stack px-3 btn-edit-news"
+                                                            data-news_id="<%= news.id %>" data-view_type="edit"
+                                                            data-csrf="<%= csrfToken %>" data-title="<%= news.title%>"
+                                                            data-description="<%= news.description %>">Ubah
+                                                            <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                data-bs-toggle="tooltip"
+                                                                title="Fungsi yang digunakan untuk merubah isi berita & peristiwa"></i></a>
+                                                    </div>
+
+                                                </div>
+                                                <!--end::Menu 3-->
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <%no++})%>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <div class="panel-heading mt-3">
+
+                        <ul class="pagination pagination-sm pull-right">
+                            <%- pagination %>
+                        </ul>
+
+                    </div>
+                </div>
+                <%- include('./modal') %>
+            </div>
+        </div>
+    </div>
+    <%- include('../layouts/footer-ui') %>
+        <%- include('../layouts/menu-ui') %>
+            <%- include('../layouts/script') %>
+                <!-- <script src="/metroland/assets/plugins/custom/ckeditor/ckeditor-classic.bundle.js"></script> -->
+
+                <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+
+                <!-- <script type="module">
+                    import { Image, ImageResizeEditing, ImageResizeHandles } from '@ckeditor/ckeditor5-image';
+                </script> -->
+                <script type="module" src="/metroland/assets/js/pages/news/index.js"></script>
+                <%- include('../layouts/end-tag') %>
