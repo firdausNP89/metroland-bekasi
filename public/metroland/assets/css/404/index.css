@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #ffffff;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.col-md-4 {
+    width: 100%;
+}
+
+.wrapper {
+    min-width: 320px;
+}
+    .error-box {
+        border-radius: 5px;
+        display: block;
+        padding: 20px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .error-box h1,
+    .error-box h2,
+    .error-box p,
+    .error-box .cta-btn {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+/* .error-box h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: #00A3FF;
+    margin-bottom: 15px;
+}
+
+.error-box h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.error-box p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 1.6rem;
+    color: #000000;
+    margin-bottom: 15px;
+} */
+
+
+
+.error-box .cta-btn{
+    display: inline-flex;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 16px;
+    background:#00A3FF;
+    color: #ffffff;
+    padding: 10px 24px;
+    margin-top: 40px;
+    align-items: center;
+    border-radius: 5px;
+    border-color: transparent;
+}
+
+
+
+/* .error-img{
+    width: 620px;
+    margin-right: 65px;
+} */
+
+.error-img {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+}
+
+
+@media (min-width: 768px) {
+    .error-box  {
+        padding: 30px;
+    }
+
+    .error-box h1,
+    .error-box h2,
+    .error-box p {
+    margin-top: 15px;
+    margin-left: 70px;
+    text-align: left;
+}
+
+ .error-box .cta-btn {
+        margin-bottom: 10px;
+        margin-right: 60px;
+    }
+
+
+
+.error-img {
+    width: 420px;
+    margin-right: 120px;
+    margin-bottom: 40px;
+}
+
+.row {
+    flex-direction: row;
+    margin-top: 60px;
+}
+
+.col-md-4 {
+    width: 50%;
+} 
+
+}
+
+@media (min-width: 1280px) {
+    .error-box h1,
+    .error-box h2,
+    .error-box p {
+    margin-top: 15px;
+    margin-left: 90px;
+    text-align: left;
+}
+  
+
+    .error-box .cta-btn {
+        margin-bottom: 10px;
+        margin-right: 120px;
+    }
+
+    .row {
+        flex-direction: row;
+    }
+
+    .col-md-4 {
+        width: 50%;
+    }
+
+    .error-img {
+
+        width:400px;
+        margin-right: 100px;
+        margin-bottom: 10px;
+    }
+
+}

@@ -1,0 +1,442 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ECEBE7;
+    color: #323232;
+}
+
+h1 {
+    font-weight: 600;
+}
+
+/* navbar */
+.bg-light {
+    height: 80px;
+}
+
+.bg-light .nav-link{
+    color: #B37F2C;
+}
+
+.bg-light .nav-link.active{
+    color: #B37F2C !important;
+}
+
+.bg-secondary .navbar-brand img {
+    width: 90px;
+}
+
+.nav-color {
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: all ease-in-out 0.3s;
+    height: 80px;
+}
+
+.bg-transparent {
+    transition: all ease-in-out 0.3s;
+}
+
+.navbar-nav {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.navbar-nav li .nav-link:hover {
+   color: white;
+   font-weight: 600;
+   text-decoration: underline;
+   text-underline-offset: 10px;
+   text-decoration-thickness: 3px;
+}
+
+.navbar-nav li .nav-link.active {
+    color: white;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 3px;
+ }
+
+.nav-color li .nav-link:hover{
+   color: #B37F2C;
+   font-weight: 600;
+   text-decoration: underline;
+   text-underline-offset: 10px;
+   text-decoration-thickness: 3px;
+}
+
+.nav-color li .nav-link.active {
+    color: #B37F2C;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 3px;
+ }
+
+.nav-link {
+    color: white;
+}
+
+.nav-item {
+    margin: 0px 10px;
+}
+
+@media screen and (min-width: 440px) {
+    .nav-color .nav-link{
+        color: #B37F2C;
+    }
+  }
+
+.nav-color .nav-link{
+    color: #B37F2C;
+}
+
+.nav-color .navbar-brand img {
+    width: 90px;
+}
+
+.list-icon {
+    filter: invert(96%) sepia(96%) saturate(16%) hue-rotate(287deg) brightness(104%) contrast(107%);
+    
+}
+
+.nav-color .list-icon {
+    filter: invert(48%) sepia(84%) saturate(420%) hue-rotate(358deg) brightness(93%) contrast(81%);
+}
+
+.nav-item .dropdown-menu {
+    border: none;
+    text-align: center;
+}
+
+/* carousel */
+.carousel-item img{
+    height: 100vh;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+/* hero */
+.hero-image img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.hero-video video{
+    height: 100vh ;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* produk */
+.card {
+    border: none;
+    border-radius: 0;
+}
+
+#produk .card-body {
+    padding: 0px 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#produk .card-title {
+    color: #B37F2C;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+#produk .card-text {
+    font-size: smaller;
+    margin-top: 50px;
+}
+
+#produk .card a {
+    color: #B37F2C;
+    text-decoration: none;
+}
+
+
+.btn-primary {
+    width: 200px ;
+    height: 40px;
+    background-color: #B37F2C;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none
+}
+
+
+.btn-primary a{
+    color: white ;
+    text-decoration: none;
+}
+
+/* cluster */
+.cluster-title img {
+    width: 230px;
+}
+
+.cluster-title p {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px;
+}
+
+#pills-tab .nav-item{
+    border: solid;
+    border-color: #B37F2C;
+    margin: -1px;
+}
+
+#pills-tab .nav-item :hover{
+    background-color: #B37F2C;
+    color: white;
+    border-radius: 0;
+}
+
+
+#cluster .nav-link{
+    font-weight: 600;
+    font-size: 20px;
+    color: #323232;
+}
+
+
+
+
+#cluster .nav .active {
+    color: white;
+    background-color: #B37F2C;
+    border-radius: 0%;
+}
+
+#cluster .card-text {
+    font-weight: 600;
+}
+
+#cluster .card {
+    background: transparent;
+}
+
+.table {
+    border: #B37F2C;
+    border-top-style: solid;
+    border-bottom-style: solid ;
+    border-width: 1px;
+    background: transparent;
+}
+
+#cluster .carousel-item img{
+    height: 500px;
+    object-fit: cover;
+}
+
+.table td {
+    font-weight: 600;
+    height: 70px;
+    background: transparent;
+}
+
+
+/* fasilitas */
+#fasilitas .card{
+    width: 300px;
+}
+
+#fasilitas img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Value */
+
+#brand-value .rounded-circle {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border-style: solid;
+    border-color: #B37F2C;
+    border-width: 6px;
+}
+
+.row h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+#brand-value .row p {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 50px;
+}
+
+/* simulasi kpr */
+#simulasi img {
+    margin: 10px;
+    height: 45px;
+}
+
+
+/* berita */
+#berita .card {
+    width: 400px;
+    border-radius: 0;
+}
+
+.card-img-top {
+    border-radius: 0;
+}
+
+#berita .card-body {
+    background-color: #ECEBE7;
+}
+
+#berita .card a {
+    color: #B37F2C;
+    text-decoration: none;
+}
+
+#berita .card-text{
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical; 
+    -webkit-line-clamp: 4; 
+}
+
+#berita .card-footer {
+    font-size: smaller;
+    background-color: #ECEBE7;
+}
+
+.next-news {
+    position: relative;
+    text-align: center;
+    background: black;
+    
+}
+
+.next-news .title {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.next-news a{
+    text-decoration: none;
+    color: white;
+}
+
+.next-news .title img {
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(50deg) brightness(112%) contrast(112%);
+}
+
+.next-news .img-fluid{
+    width: 100%;
+    height: 500px;
+    background: #323232;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+/* karir */
+#karir .card {
+    width: 300px;
+    border-radius: 0;
+    background: none;
+}
+
+#karir .card .card-img-top {
+    height: 50%;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#karir .card-body {
+    background-color: white;
+}
+
+#karir .card-body a{
+    text-decoration: none;
+    color: #323232;
+    font-size: 14px;
+
+}
+
+#karir .card-title {
+    color:#B37F2C;
+    text-decoration: none;
+}
+
+#karir .card-text img {
+    filter: invert(15%) sepia(3%) saturate(13%) hue-rotate(319deg) brightness(99%) contrast(87%);
+    
+}
+
+/* lokasi */
+.map-container {
+    overflow:hidden;
+    padding-bottom:40%;
+    position:relative;
+    height:0;
+}
+ 
+.map-container iframe {
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.maps .map-container {
+    overflow:hidden;
+    padding-bottom:40%;
+    height:0;
+}
+ 
+.maps .map-container iframe {
+    left:0;
+    top:0;
+    height:100%;
+    width: 1000%;
+    position:absolute;
+}
+
+#location {
+    display: block;
+    position: relative;
+}
+
+/* footer */
+.footer {
+    background-color: #B37F2C;
+    color: white;
+}
+
+.footer p {
+    margin: 10px;
+}
+
+.footer .row h5 {
+    font-weight:600;
+}
+
+.footer-social-media a{
+    color: white;
+    text-decoration: none;
+}
+
+.copyright {
+    font-size: 15px;
+}
